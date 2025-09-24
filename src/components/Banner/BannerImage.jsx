@@ -1,0 +1,21 @@
+import Image from 'next/image';
+import React from 'react';
+
+const BannerImage = ({ image }) => {
+    return (
+        <div
+            // style={{ clipPath: 'inset(-1000px -1000px 0px -1000px)' }}
+            className="relative w-full h-[300px] md:w-[500px] lg::w-[720px] lg:h-[656px]">
+            <Image
+                src={image}
+                alt='Banner Image'
+                fill
+                style={{ objectFit: "contain" }}
+            />
+            {/* <div className='absolute -right-10 -z-10 w-[600px] h-[900px] rotate-[-45deg] bg-secondary border-2' /> */}
+            <div className='absolute -right-10 -z-10 w-[600px] h-[600px] bg-secondary blur-[300px]' />
+        </div>
+    );
+};
+
+export default BannerImage;

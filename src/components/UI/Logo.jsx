@@ -8,7 +8,7 @@ const Logo = ({ variant }) => {
 
 
     return (
-        <div className="relative w-24 md:w-36">
+        <div className="relative w-24 md:w-36 h-[39px] md:h-[62px]">
             <Image
                 src={logo}
                 alt='SpaceSyncLogo'
