@@ -1,19 +1,21 @@
 import Image from "next/image";
 
-const Logo = ({variant}) => {
-    let logo 
-    if(variant === 'primary'){
+const Logo = ({ variant }) => {
+    let logo
+    if (variant === 'primary') {
         logo = "/Logo/Logo.png"
     }
 
-    
+
     return (
-        <Image
-            src={logo}
-            width={150}
-            height={50}
-            alt='SpaceSyncLogo'
-        />
+        <div className="relative w-24 md:w-36">
+            <Image
+                src={logo}
+                alt='SpaceSyncLogo'
+                fill
+                style={{ objectFit: "contain" }}
+            />
+        </div>
     );
 };
 
