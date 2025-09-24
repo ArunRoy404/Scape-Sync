@@ -8,7 +8,8 @@ const Button = ({ variant, children, onClick, icon }) => {
             <button
                 onClick={onClick}
                 className='flex gap-3 active:translate-y-[2px] transition-all duration-300 
-                cursor-pointer rounded-lg px-3 py-2 md:px-4 md:py-3 border-primary border hover:border-primary/70'
+                cursor-pointer rounded-lg px-3 py-2 md:px-4 md:py-3 border-primary border 
+                hover:border-primary/70'
             >
                 <div>
                     <Image
@@ -23,7 +24,7 @@ const Button = ({ variant, children, onClick, icon }) => {
                         className='text-left text-gray-800 text-[9px] font-normal leading-[9px]'>
                         Download on the
                     </p>
-                    <p className='text-gray-800 font-semibold '>
+                    <p className='text-gray-800 font-semibold text-sm md:text-base'>
                         {children}
                     </p>
                 </div>

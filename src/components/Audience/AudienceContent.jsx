@@ -8,7 +8,7 @@ const AudienceContent = ({ audience }) => {
     return (
         <div className='relative'>
             <div className={`${audience.reverse ? '-right-130' : '-left-130'} absolute  
-                    -top-30 -z-10 w-[400px] h-[400px] -rotate-45 blur-[200px] bg-secondary ` }
+                    -top-30 -z-10 w-[400px] h-[400px] -rotate-45 md:blur-[200px] bg-secondary ` }
             />
             <AudienceTag>
                 {audience?.target}

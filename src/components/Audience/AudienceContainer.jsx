@@ -3,7 +3,7 @@ import Audience from './Audience';
 
 const AudienceContainer = ({ subSection }) => {
     return (
-        <div className='space-y-10'>
+        <div className='space-y-30 md:space-y-10'>
             {
                 subSection.map(audience => {
                     return <Audience audience={audience} key={audience.target} />

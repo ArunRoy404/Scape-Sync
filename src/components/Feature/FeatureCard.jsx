@@ -18,12 +18,12 @@ const FeatureCard = ({ feature, index }) => {
             </div>
 
             {/* title */}
-            <h2 className='text-gray-800 font-bold text-lg mt-5'>
+            <h2 className='text-gray-800 font-bold text-lg mt-3 md:mt-5'>
                 {feature.title}
             </h2>
 
             {/* description  */}
-            <p className='text-gray-600 text-sm font-normal mt-1'>
+            <p className='text-gray-600 text-sm font-normal md:mt-1'>
                 {feature.description}
             </p>
         </div>
