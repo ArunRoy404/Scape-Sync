@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+
+@theme inline {
+  --font-sans: var(--font-public-sans);
+
+  --color-primary: #3BA334;
+  --color-secondary: #ECFCEB;
+  --color-surface: #1F1B2E;
+  --color-background: rgba(217, 217, 217, 1);
+  --color-text: white;
+  --color-muted: #9CA3AF;
+  --color-border: #2A2A2A;
+  --color-navLink: black;
+  --color-bullet: white;
+}
+
+
+body {
+  font-family: var(--font-public-sans)
+}
