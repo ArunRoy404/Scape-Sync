@@ -11,7 +11,7 @@ const AudienceImage = ({ image }) => {
                 fill
                 style={{ objectFit: "contain" }}
             />
-            <div className='absolute right-[50%] translate-x-[50%] -z-10 w-[200px] h-[200px] md:w-[551px] md:h-[500px] blur-[100px] -rotate-45 bg-secondary ' />
+            <div className='absolute right-[50%] translate-x-[50%] -z-10 w-[200px] h-[200px] md:w-[300px] md:h-[300px] lg:w-[551px] lg:h-[500px] -rotate-45 bg-secondary blur-[100px] ' />
         </div>
     );
 };
