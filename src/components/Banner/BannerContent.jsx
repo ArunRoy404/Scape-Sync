@@ -1,6 +1,7 @@
 import { BannerData } from "@/content/BannerData";
 import BannerTitle from "./BannerTitle";
 import BannerSubtitle from "./BannerSubtitle";
+import BannerButtons from "./BannerButtons";
 
 
 const BannerContent = () => {
@@ -20,14 +21,9 @@ const BannerContent = () => {
                     {BannerData.subtitle}
                 </BannerSubtitle>
             </div>
-            <div>
-                <button>
-                    App Store
-                </button>
-                <button>
-                    Google Play
-                </button>
-            </div>
+
+            {/* button container  */}
+           <BannerButtons/>
         </div>
     );
 };

@@ -1,6 +1,37 @@
+import Image from 'next/image';
 import React from 'react';
 
-const Button = ({ variant, children, onClick }) => {
+const Button = ({ variant, children, onClick, icon }) => {
+
+    if (variant === 'download') {
+        return (
+            <button
+                onClick={onClick}
+                className='flex gap-3 active:translate-y-[2px] transition-all duration-300 
+                cursor-pointer rounded-lg px-3 py-2 md:px-4 md:py-3 border-primary border hover:border-primary/70'
+            >
+                <div>
+                    <Image
+                        src={icon}
+                        width={25}
+                        height={25}
+                        alt={children}
+                    />
+                </div>
+                <div>
+                    <p
+                        className='text-left text-gray-800 text-[9px] font-normal leading-[9px]'>
+                        Download on the
+                    </p>
+                    <p className='text-gray-800 font-semibold '>
+                        {children}
+                    </p>
+                </div>
+            </button>
+        )
+    }
+
+
     if (variant === 'primary') {
         return (
             <button
