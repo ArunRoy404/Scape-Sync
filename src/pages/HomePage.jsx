@@ -9,15 +9,17 @@ import React from 'react';
 
 const HomePage = () => {
     return (
-        <main className='pb-40 container mx-auto px-4 sm:px-6 lg:px-8'>
-            <Navbar/>
-            <BannerSection/>
-            <FeatureSection/>
-            <AudienceSection/>
-            <TestimonialSection/>
-            <FAQSection/>
-            <Footer/>
-        </main>
+        <>
+            <Navbar />
+            <main className='pb-40 container mx-auto px-4 sm:px-6 lg:px-8'>
+                <BannerSection />
+                <FeatureSection />
+                <AudienceSection />
+                <TestimonialSection />
+                <FAQSection />
+            </main>
+            <Footer />
+        </>
     );
 };
 
