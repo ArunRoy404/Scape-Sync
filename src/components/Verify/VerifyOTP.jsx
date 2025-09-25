@@ -59,6 +59,7 @@ const VerifyOTP = () => {
                                                 [...new Array(6)].map((_, index) => {
                                                     return (
                                                         <InputOTPSlot
+                                                            key={index}
                                                             index={index}
                                                             className='w-[56px] h-[56px] rounded-[8px] '
                                                         />
