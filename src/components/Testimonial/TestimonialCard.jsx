@@ -41,7 +41,7 @@ const TestimonialCard = ({ testimonial }) => {
                     <Image
                         src='/icon/IconQuote.png'
                         width={64}
-                        height={2852}
+                        height={52}
                         alt={testimonial.name}
                     />
                 </div>
