@@ -1,4 +1,5 @@
 import ButtonHome from '@/components/UI/ButtonHome';
+import ConfettiContainer from '@/components/UI/ConfettiContainer';
 import Image from 'next/image';
 import React from 'react';
 
@@ -10,12 +11,18 @@ const SuccessfulPage = ({ title, subtitle }) => {
                 {/* image  */}
                 <div className="relative w-[250px] h-[252px] md:w-[332px] md:h-[328px] mx-auto">
                     <Image
+                        className='bg-white'
                         src='/Vector/VectorSparkle.svg'
                         alt='sparkles'
                         fill
                         style={{ objectFit: "contain" }}
                     />
+                    <ConfettiContainer
+                        className='absolute right-[50%] translate-x-[50%] 
+                                    top-[80%] -z-10' />
                 </div>
+
+
 
                 {/* message  */}
                 <div className='space-y-4 mt-9 mb-10 text-center'>
@@ -29,6 +36,7 @@ const SuccessfulPage = ({ title, subtitle }) => {
                 </div>
 
                 <ButtonHome />
+
 
             </div>
         </section>
