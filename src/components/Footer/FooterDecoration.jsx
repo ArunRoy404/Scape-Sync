@@ -6,15 +6,15 @@ const FooterDecoration = () => {
         <>
             <BannerDecoration
                 image='/Vector/VectorShape.svg'
-                className='absolute z-10 -top-40 md:-top-70 -right-14 w-[300px] h-[320px] md:w-[420px] md:h-[450px] opacity-20'
+                className='absolute z-1 -top-40 md:-top-70 -right-14 w-[300px] h-[320px] md:w-[420px] md:h-[450px] opacity-20'
             />
             <BannerDecoration
                 image='/Vector/VectorShape.svg'
-                className='absolute rotate-[150deg] z-10 transform -bottom-40 md:-bottom-50 right-30 md:right-40 xl:right-60 w-[300px] h-[320px] md:w-[420px] md:h-[450px] opacity-20'
+                className='absolute z-1 rotate-[150deg] transform -bottom-40 md:-bottom-50 right-30 md:right-40 xl:right-60 w-[300px] h-[320px] md:w-[420px] md:h-[450px] opacity-20'
             />
             <BannerDecoration
                 image='/Vector/VectorShape.svg'
-                className='absolute rotate-[125deg] z-10 transform -bottom-25 md:-bottom-35 -right-50 md:-right-70 w-[300px] h-[320px] md:w-[420px] md:h-[450px] opacity-20'
+                className='absolute z-1 rotate-[125deg] transform -bottom-25 md:-bottom-35 -right-50 md:-right-70 w-[300px] h-[320px] md:w-[420px] md:h-[450px] opacity-20'
             />
         </>
     );

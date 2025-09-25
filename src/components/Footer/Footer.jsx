@@ -8,14 +8,18 @@ import FooterDecoration from './FooterDecoration';
 
 const Footer = () => {
     return (
-        <footer className='relative bg-footer overflow-hidden'>
-            <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
+        <footer className='relative  bg-footer overflow-hidden'>
+            <div className='relative container z-10  mx-auto px-4 sm:px-6 lg:px-8'>
                 <FooterContent footerData={footerData} />
                 <FooterSocial socials={footerData.socials} />
             </div>
-            <FooterCopyRight footerData={footerData} />
+            <div className=''>
+                <FooterCopyRight footerData={footerData} />
+            </div>
 
-            <FooterDecoration/>
+            <div>
+                <FooterDecoration />
+            </div>
         </footer>
     );
 };
