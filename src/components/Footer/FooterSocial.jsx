@@ -1,4 +1,4 @@
-import SocialLink from "../ui/SocialLink";
+import SocialLink from "@/components/UI/SocialLink";
 
 const FooterSocial = ({socials}) => {
     return (
