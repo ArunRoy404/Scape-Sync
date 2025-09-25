@@ -1,5 +1,5 @@
 import Button from '../Button/Button';
-import Logo from '../UI/Logo';
+import Logo from '../ui/Logo';
 
 const Navbar = () => {
     return (
