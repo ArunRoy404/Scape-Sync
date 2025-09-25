@@ -1,5 +1,6 @@
 const audienceData = {
     heading: {
+        decoration: true,
         title: 'Build for Everyone',
         subtitle: `Whether you're booking services, managing tasks, or running operations, we've designed the perfect experience for you.`,
     },

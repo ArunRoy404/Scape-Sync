@@ -1,6 +1,7 @@
 import AudienceSection from '@/section/AudienceSection';
 import BannerSection from '@/section/BannerSection';
 import FeatureSection from '@/section/FeatureSection';
+import TestimonialSection from '@/section/TestimonialSection';
 import React from 'react';
 
 const HomePage = () => {
@@ -9,6 +10,7 @@ const HomePage = () => {
             <BannerSection/>
             <FeatureSection/>
             <AudienceSection/>
+            <TestimonialSection/>
         </main>
     );
 };

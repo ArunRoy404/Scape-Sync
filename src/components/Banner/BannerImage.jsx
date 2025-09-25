@@ -13,7 +13,9 @@ const BannerImage = ({ image }) => {
                 style={{ objectFit: "contain" }}
             />
             {/* <div className='absolute -right-10 -z-10 w-[600px] h-[900px] rotate-[-45deg] bg-secondary border-2' /> */}
-            <div className='absolute right-[50%] translate-x-[50%] lg:translate-x-0 lg:-right-10 -z-10 w-[200px] h-[200px] md:w-[300px] md:h-[300px] lg:w-[600px] lg:h-[600px] bg-secondary blur-[100px] lg:blur-[200px]' />
+            <div className='absolute right-[50%] translate-x-[50%] lg:translate-x-0 lg:-right-10 -z-10 
+            w-[200px] h-[300px] md:w-[300px] md:h-[400px] lg:w-[600px] lg:h-[700px] -rotate-45
+             bg-secondary rounded-full blur-[100px]' />
         </div>
     );
 };

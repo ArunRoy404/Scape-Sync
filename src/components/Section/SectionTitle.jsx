@@ -1,7 +1,7 @@
 import React from 'react';
 import BannerDecoration from '../Banner/BannerDecoration';
 
-const SectionTitle = ({ children }) => {
+const SectionTitle = ({ children, decoration }) => {
     return (
         <div className='relative max-w-max'>
             {/* title  */}
@@ -10,10 +10,12 @@ const SectionTitle = ({ children }) => {
             </h1>
 
             {/* mark image  */}
-            <BannerDecoration
-                image='/Vector/VectorMarkSmall.png'
-                className='absolute -z-10 -bottom-5 right-0 w-[150px] lg:w-[220px] xl:w-[220px] h-10'
-            />
+            {
+                decoration && <BannerDecoration
+                    image='/Vector/VectorMarkSmall.png'
+                    className='absolute -z-10 -bottom-5 right-0 w-[150px] lg:w-[220px] xl:w-[220px] h-10'
+                />
+            }
         </div>
     );
 };
