@@ -6,8 +6,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import {
     Form,
-} from "@/components/ui/form";
-import { Button } from "@/components/ui/button";
+} from "@/components/UI/form";
+import { Button } from "@/components/UI/button";
 import InputCustom from "../Input/InputCustom";
 
 

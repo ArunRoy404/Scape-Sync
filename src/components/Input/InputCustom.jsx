@@ -4,9 +4,9 @@ import {
     FormItem,
     FormLabel,
     FormMessage,
-} from "@/components/ui/form";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Input } from "@/components/ui/input";
+} from "@/components/UI/form";
+import { Checkbox } from "@/components/UI/checkbox";
+import { Input } from "@/components/UI/input";
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 
