@@ -4,7 +4,7 @@ const TestimonialCard = ({ testimonial }) => {
     return (
         <div className='p-7 rounded-3xl 
             shadow-[0px_16px_32px_-4px_rgba(146,171,145,0.1)]
-            flex flex-col gap-7 bg-white'
+            flex flex-col gap-7 bg-white z-1'
         >
 
             {/* reviewer info  */}
