@@ -1,7 +1,6 @@
 import Image from 'next/image';
-import React from 'react';
 
-const Button = ({ variant, children, onClick, icon }) => {
+const Button = ({ variant, children, onClick, icon, invert }) => {
 
     if (variant === 'download') {
         return (
@@ -19,12 +18,12 @@ const Button = ({ variant, children, onClick, icon }) => {
                         alt={children}
                     />
                 </div>
-                <div>
+                <div className={`${invert ? 'text-white' : 'text-gray-800'} `}>
                     <p
-                        className='text-left text-gray-800 text-[9px] font-normal leading-[9px]'>
+                        className='text-left  text-[9px] font-normal leading-[9px]'>
                         Download on the
                     </p>
-                    <p className='text-gray-800 font-semibold text-sm md:text-base'>
+                    <p className=' font-semibold text-sm md:text-base'>
                         {children}
                     </p>
                 </div>

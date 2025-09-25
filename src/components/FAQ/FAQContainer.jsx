@@ -6,7 +6,6 @@ import {
 } from "@/components/ui/accordion"
 
 const FAQContainer = ({ faqData }) => {
-    console.log(faqData.faqs);
     return (
         <Accordion className='space-y-4' type="single" collapsible defaultValue='faq-1'>
             {

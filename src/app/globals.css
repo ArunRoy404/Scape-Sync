@@ -10,6 +10,7 @@
   --color-secondary: #ECFCEB;
   --color-background: white;
   --color-border: #C7E6C5;
+  --color-footer: #0F3B34;
 
 
   --color-sidebar-ring: var(--sidebar-ring);
@@ -42,10 +43,6 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-}
-
-body {
-  font-family: var(--font-public-sans)
 }
 
 :root {
@@ -124,4 +121,9 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+body {
+  font-family: var(--font-public-sans);
+  overflow-x: hidden;
 }

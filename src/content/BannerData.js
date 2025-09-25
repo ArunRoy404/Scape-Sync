@@ -18,7 +18,7 @@ const BannerData = {
             label: "Google Play",
             url: "#",
             type: "download",
-            icon: '/Icon/IconGooglePlay.png',
+            icon: '/Icon/IconGooglePlay.svg',
         },
     ],
     image: "/Section/BannerImage.png",
