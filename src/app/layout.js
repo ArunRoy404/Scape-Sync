@@ -1,7 +1,5 @@
 import { Public_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer/Footer";
 
 
 const publicSans = Public_Sans({
@@ -23,9 +21,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${publicSans.variable}  antialiased`}
       >
-        <Navbar/>
         {children}
-        <Footer/>
       </body>
     </html>
   );

@@ -3,7 +3,7 @@ import Image from "next/image";
 const Logo = ({ variant }) => {
     let logo
     if (variant === 'primary') {
-        logo = "/Logo/Logo.png"
+        logo = "/Logo/Logo.svg"
     }
 
 
