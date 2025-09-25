@@ -39,10 +39,10 @@ const TestimonialCard = ({ testimonial }) => {
 
                 <div className='absolute -z-10 -top-5 -left-3'>
                     <Image
-                        src='/icon/IconQuote.png'
+                        src='/icon/IconQuote.svg'
                         width={64}
                         height={52}
-                        alt={testimonial.name}
+                        alt='Quote'
                     />
                 </div>
 
