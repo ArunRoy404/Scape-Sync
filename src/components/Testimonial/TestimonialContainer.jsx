@@ -18,7 +18,7 @@ const TestimonialContainer = ({ testimonialData }) => {
 
             {/* blurry bg  */}
             <div
-                className='absolute top-0 -z-10 w-full h-[170px] 
+                className='absolute top-0 -z-10 w-full h-full
                 bg-secondary rounded-full blur-[100px]'
             />
         </div>
