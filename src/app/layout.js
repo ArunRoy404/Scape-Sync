@@ -1,6 +1,7 @@
 import { Public_Sans } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/UI/sonner"
+import NextAuthSessionProvider from "@/provider/NextAuthSessionProvider";
 
 
 const publicSans = Public_Sans({
@@ -21,9 +22,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`${publicSans.variable}  antialiased`}
-      >
-        {children}
-        <Toaster />
+      ><NextAuthSessionProvider>
+          {children}
+          <Toaster />
+        </NextAuthSessionProvider>
       </body>
     </html>
   );

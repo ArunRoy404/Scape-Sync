@@ -3,15 +3,19 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-
-import {
-    Form,
-} from "@/components/UI/form";
+import { Form } from "@/components/UI/form";
 import { Button } from "@/components/UI/button";
 import InputCustom from "../Input/InputCustom";
 import Link from "next/link";
+import { useState } from "react";
+import { toast } from "sonner";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import Spinner from "../UI/Spinner";
+import Message from "../UI/Message";
 
 
+// validation 
 const formSchema = z
     .object({
         email: z.string().email("Enter a valid email"),
@@ -20,9 +24,12 @@ const formSchema = z
     })
 
 
-
 export default function LoginForm() {
+    const [isLoading, setIsLoading] = useState(false);
+    const [status, setStatus] = useState(false)
+    const router = useRouter()
 
+    // formdata 
     const form = useForm({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -32,8 +39,34 @@ export default function LoginForm() {
         },
     });
 
-    function onSubmit(values) {
-        console.log("Form Data:", values);
+
+    const onSubmit = async (values) => {
+        setIsLoading(true);
+        const result = await signIn("credentials", {
+            redirect: false,
+            email: values.email,
+            password: values.password,
+            rememberMe: values.rememberMe,
+        });
+
+        setIsLoading(false);
+
+        // successful 
+        if (result.ok) {
+            setStatus({ type: 'success', message: "Login Successful" })
+            toast("Login Successful.", {
+                action: {
+                    label: "Close",
+                },
+                duration: Infinity,
+            })
+            router.push('/')
+        }
+
+        // unsuccessful 
+        else {
+            setStatus({ type: 'error', message: "Invalid Credentials" })
+        }
     }
 
     return (
@@ -59,9 +92,17 @@ export default function LoginForm() {
 
 
                     {/* Submit Button */}
-                    <Button type="submit" className="cursor-pointer w-full text-xs md:text-base font-bold leading-6  md:py-6">
-                        Create Account
+                    <Button disabled={isLoading} type="submit" className="cursor-pointer w-full text-xs md:text-base font-bold leading-6  md:py-6">
+                        {
+                            isLoading
+                                ? <Spinner stroke="10" color="white" size="10" />
+                                : ' Create Account'
+                        }
                     </Button>
+
+
+                    {/* status message  */}
+                    <Message status={status} />
                 </form>
             </Form>
         </div>

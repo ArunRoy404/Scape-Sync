@@ -4,7 +4,6 @@ import Link from 'next/link';
 import React from 'react';
 
 const RoleCard = ({ role }) => {
-
     return (
         <Link href={'/register'}
             className='p-6 cursor-pointer bg-gray-100 rounded-2xl border border-[rgba(223,227,232,1)]
