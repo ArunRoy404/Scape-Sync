@@ -1,7 +1,7 @@
 import RoleCard from "@/components/Role/RoleCard";
 import Logo from "@/components/UI/Logo";
 
-const UserRolePage = () => {
+const UserRolePage = ({userRole}) => {
     return (
         <main className='w-screen h-screen relative'>
             <section className='mx-auto max-w-max flex items-center justify-center h-[calc(100vh-63px)] md:h-[calc(100vh-110px)] px-4'>
@@ -23,8 +23,8 @@ const UserRolePage = () => {
                     </div>
 
                     <div className="md:flex space-y-6 md:space-y-0 gap-8 items-center justify-center">
-                        <RoleCard role={'User'}/>
-                        <RoleCard role={'Owner'}/>
+                        <RoleCard role={'User'} userRole={userRole}/>
+                        <RoleCard role={'Owner'} userRole={userRole}/>
                     </div>
                 </div>
             </section>
