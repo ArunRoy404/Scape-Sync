@@ -1,7 +1,6 @@
 import BackButton from '@/components/UI/BackButton';
-import VerifyOTP from '@/components/Verify/VerifyOTP';
-import VerifyPageHeading from '@/components/Verify/VerifyPageHeading';
-import { Link } from 'lucide-react';
+import VerifyOTP from '@/components/Form/VerifyOTP';
+import PageHeading from '@/components/Heading/PageHeading';
 import React from 'react';
 
 const VerifyPage = () => {
@@ -9,8 +8,13 @@ const VerifyPage = () => {
         <section className='mx-auto max-w-[480px] flex items-center justify-center h-[calc(100vh-63px)] md:h-[calc(100vh-110px)] px-4'>
             <div>
                 <BackButton />
-                <VerifyPageHeading />
-                <VerifyOTP/>
+
+                <PageHeading
+                    title={`Please check your email!`}
+                    subtitle={`We've emailed a 6-digit confirmation code to acb@domain, please enter the code in below box to verify your email.`}
+                />
+
+                <VerifyOTP />
 
 
                 {/* resend option  */}
