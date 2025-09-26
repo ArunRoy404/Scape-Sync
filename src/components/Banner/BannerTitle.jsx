@@ -14,13 +14,13 @@ const BannerTitle = ({ children }) => {
 
             {/* plant image  */}
             <BannerDecoration
-                image='/Vector/VectorPlant.png'
+                image='/Vector/VectorPlant.svg'
                 className='absolute -z-10 right-[50%] translate-x-[50%] -top-[60px] w-[100px] lg:w-[130px] h-[134px]'
             />
 
             {/* mark image  */}
             <BannerDecoration
-                image='/Vector/VectorMark.png'
+                image='/Vector/VectorMark.svg'
                 className='absolute -z-10 -bottom-5 right-0 w-[200px] lg:w-[300px] xl:w-[440px] h-10'
             />
         </div>

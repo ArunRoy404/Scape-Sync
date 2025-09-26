@@ -12,7 +12,7 @@ const SectionTitle = ({ children, decoration }) => {
             {/* mark image  */}
             {
                 decoration && <BannerDecoration
-                    image='/Vector/VectorMarkSmall.png'
+                    image='/Vector/VectorMarkSmall.svg'
                     className='absolute -z-10 -bottom-5 right-0 w-[150px] lg:w-[220px] xl:w-[220px] h-10'
                 />
             }

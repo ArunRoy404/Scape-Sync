@@ -12,7 +12,7 @@ const BannerData = {
             label: "App Store",
             url: "#",
             type: "download",
-            icon: "/Icon/IconApple.png",
+            icon: "/Icon/IconApple.svg",
         },
         {
             label: "Google Play",
@@ -21,7 +21,7 @@ const BannerData = {
             icon: '/Icon/IconGooglePlay.svg',
         },
     ],
-    image: "/Section/BannerImage.png",
+    image: "/Section/BannerImage.svg",
 };
 
 export { BannerData }

@@ -5,7 +5,7 @@ const BannerImage = ({ image }) => {
     return (
         <div
             // style={{ clipPath: 'inset(-1000px -1000px 0px -1000px)' }}
-            className="relative w-full h-[300px] md:w-[500px] lg::w-[720px] lg:h-[656px]">
+            className="relative w-full h-[300px] md:w-[500px] lg:w-[720px] lg:h-[656px]">
             <Image
                 src={image}
                 alt='Banner Image'
