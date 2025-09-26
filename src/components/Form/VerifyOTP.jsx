@@ -41,7 +41,13 @@ const VerifyOTP = () => {
     const redirect = useEmailStore((state) => state.redirect);
 
 
-    
+    // link adjust 
+    let API = 'https://apitest.softvencefsd.xyz/api/forgot-verify-otp'
+    if (redirect === 'registration-successful') {
+        API = 'https://apitest.softvencefsd.xyz/api/verify_otp'
+    }
+
+
     // formdata 
     const form = useForm({
         resolver: zodResolver(formSchema),
@@ -65,7 +71,7 @@ const VerifyOTP = () => {
         };
 
 
-        const response = await fetch("https://apitest.softvencefsd.xyz/api/verify_otp", requestOptions)
+        const response = await fetch(API, requestOptions)
         // .then(response => response.json())
         // .then(result => setStatus(result))
         // .catch(error => setStatus({ error }))
@@ -86,7 +92,7 @@ const VerifyOTP = () => {
         // successful 
         if (response.ok) {
             setStatus({ type: 'success', ...data })
-            toast("Verified Successful", {
+            toast("Verification Successful", {
                 description: (
                     <span className="text-black">
                         Your Email is Verified.
@@ -100,7 +106,7 @@ const VerifyOTP = () => {
             clearEmail()
             clearRedirect()
             router.push(redirect)
-        } 
+        }
         // unsuccessful
         else {
             setStatus({ type: 'error', ...data });

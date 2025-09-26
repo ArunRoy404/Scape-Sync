@@ -97,11 +97,13 @@ const RegisterForm = () => {
                     },
                     duration: Infinity,
                 })
+
+                // redirect to otp verification 
                 setEmail(values.email)
                 setRedirect('/registration-successful')
-                router.push('/verify')  
-            } 
-            
+                router.push('/verify')
+            }
+
             // unsuccessful 
             else {
                 setStatus({ type: 'error', ...data });
