@@ -16,6 +16,7 @@ import {
     InputOTPGroup,
     InputOTPSlot,
 } from "@/components/UI/input-otp";
+import useEmailStore from "@/store/emailStore";
 
 
 
@@ -26,6 +27,9 @@ const formSchema = z.object({
 });
 
 const VerifyOTP = () => {
+    const email = useEmailStore((state) => state.email);
+    console.log("Email to verify:", email);
+
     const form = useForm({
         resolver: zodResolver(formSchema),
         defaultValues: {
