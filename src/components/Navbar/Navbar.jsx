@@ -9,7 +9,7 @@ const Navbar = () => {
 
             {/* button container  */}
             <div>
-                <Button variant='primary' url='/register'>
+                <Button variant='primary' url='/user-role'>
                     Get Started
                 </Button>
             </div>
