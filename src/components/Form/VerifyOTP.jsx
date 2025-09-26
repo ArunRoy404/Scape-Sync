@@ -22,6 +22,7 @@ import { useRouter } from "next/navigation";
 import Spinner from "../UI/Spinner";
 import Message from "../UI/Message";
 import { toast } from "sonner";
+import useTokenStore from "@/store/tokenStore";
 
 
 // validation 
@@ -39,6 +40,7 @@ const VerifyOTP = () => {
     const router = useRouter();
     const email = useEmailStore((state) => state.email);
     const redirect = useEmailStore((state) => state.redirect);
+    const setToken = useTokenStore((state) => state.setToken)
 
 
     // link adjust 
@@ -103,6 +105,12 @@ const VerifyOTP = () => {
                 },
                 duration: Infinity,
             })
+
+            // save token 
+            if(data.data.token){
+                setToken(data.data.token)
+            }
+            
             clearEmail()
             clearRedirect()
             router.push(redirect)
