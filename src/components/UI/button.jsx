@@ -38,6 +38,7 @@ function Button({
   className,
   variant,
   size,
+  disabled = false, 
   asChild = false,
   ...props
 }) {
@@ -45,6 +46,7 @@ function Button({
 
   return (
     <Comp
+    disabled={disabled}
       data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
       {...props} />

@@ -17,9 +17,14 @@ import {
     InputOTPSlot,
 } from "@/components/UI/input-otp";
 import useEmailStore from "@/store/emailStore";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Spinner from "../UI/Spinner";
+import Message from "../UI/Message";
+import { toast } from "sonner";
 
 
-
+// validation 
 const formSchema = z.object({
     pin: z.string().min(6, {
         message: "Your one-time password must be 6 characters.",
@@ -27,9 +32,17 @@ const formSchema = z.object({
 });
 
 const VerifyOTP = () => {
+    const [isLoading, setIsLoading] = useState(false)
+    const [status, setStatus] = useState(null)
+    const clearEmail = useEmailStore(state => state.clearEmail)
+    const clearRedirect = useEmailStore(state => state.clearRedirect)
+    const router = useRouter();
     const email = useEmailStore((state) => state.email);
-    console.log("Email to verify:", email);
+    const redirect = useEmailStore((state) => state.redirect);
 
+
+    
+    // formdata 
     const form = useForm({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -37,13 +50,68 @@ const VerifyOTP = () => {
         },
     });
 
-    function onSubmit(data) {
-        console.log(data);
+    const onSubmit = async (value) => {
+        setIsLoading(true)
+        const formdata = new FormData();
+        formdata.append("email", email);
+        formdata.append("otp", value.pin);
+
+
+        // body 
+        const requestOptions = {
+            method: 'POST',
+            body: formdata,
+            redirect: 'follow'
+        };
+
+
+        const response = await fetch("https://apitest.softvencefsd.xyz/api/verify_otp", requestOptions)
+        // .then(response => response.json())
+        // .then(result => setStatus(result))
+        // .catch(error => setStatus({ error }))
+        // .finally(() => { setIsLoading(false) })
+
+
+        // get json 
+        let data
+        try {
+            data = await response.json();
+        } catch (error) {
+            setStatus({ type: 'server-error', message: "Something went wrong", error })
+        } finally {
+            setIsLoading(false)
+        }
+
+
+        // successful 
+        if (response.ok) {
+            setStatus({ type: 'success', ...data })
+            toast("Verified Successful", {
+                description: (
+                    <span className="text-black">
+                        Your Email is Verified.
+                    </span>
+                ),
+                action: {
+                    label: "Close",
+                },
+                duration: Infinity,
+            })
+            clearEmail()
+            clearRedirect()
+            router.push(redirect)
+        } 
+        // unsuccessful
+        else {
+            setStatus({ type: 'error', ...data });
+        }
     }
 
 
     return (
         <div className="flex justify-center items-center">
+
+            {/* form  */}
             <Form {...form}>
                 <form
                     onSubmit={form.handleSubmit(onSubmit)}
@@ -78,9 +146,16 @@ const VerifyOTP = () => {
                         )}
                     />
 
-                    <Button type="submit" className="cursor-pointer w-full text-xs md:text-base font-bold leading-6  md:py-6">
-                        Verify OTP
+                    <Button disabled={isLoading} type="submit" className="cursor-pointer w-full text-xs md:text-base font-bold leading-6  md:py-6">
+                        {
+                            isLoading
+                                ? <Spinner stroke="10" color="white" size="10" />
+                                : 'Verify OTP'
+                        }
                     </Button>
+
+                    {/* status message  */}
+                    <Message status={status} />
                 </form>
             </Form>
         </div>

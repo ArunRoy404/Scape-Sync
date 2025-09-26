@@ -7,6 +7,10 @@ const Message = ({ status }) => {
                 <p className="text-primary font-bold">{status.message}</p>
             )}
 
+            {status?.type === "cors" && status.ok (
+                <p className="text-primary font-bold">'Email Verified'</p>
+            )}
+
             {status?.type === "error" && (
                 <p className="text-red-400 font-bold">{status.message}</p>
             )}

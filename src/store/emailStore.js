@@ -5,8 +5,11 @@ const useEmailStore = create(
     persist(
         (set) => ({
             email: '',
+            redirect: '',
             setEmail: email => set({ email }),
-            clearEmail: () => set({ email: '' })
+            setRedirect: redirect=> set({ redirect }),
+            clearEmail: () => set({ email: '' }),
+            clearRedirect: () => set({ redirect: '' }),
         }),
         {
             name: 'email-storage'

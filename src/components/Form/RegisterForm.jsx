@@ -16,7 +16,7 @@ import Message from "../UI/Message";
 import useEmailStore from "@/store/emailStore";
 import { useRouter } from "next/navigation";
 
-
+// validate inputs 
 const formSchema = z
     .object({
         firstName: z.string().min(1, "First name is required"),
@@ -37,8 +37,10 @@ const RegisterForm = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [status, setStatus] = useState(null)
     const setEmail = useEmailStore(state => state.setEmail)
+    const setRedirect = useEmailStore(state => state.setRedirect)
     const router = useRouter();
 
+    // form data 
     const form = useForm({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -56,6 +58,7 @@ const RegisterForm = () => {
         setIsLoading(true)
         const formdata = new FormData();
 
+        // create data 
         formdata.append('first_name', values.firstName)
         formdata.append("last_name", values.lastName);
         formdata.append("email", values.email);
@@ -64,6 +67,7 @@ const RegisterForm = () => {
         formdata.append("terms", values.agree ? "true" : "false");
 
 
+        // body 
         const requestOptions = {
             method: 'POST',
             body: formdata,
@@ -79,6 +83,7 @@ const RegisterForm = () => {
             const data = await response.json();
 
 
+            // successful 
             if (response.ok) {
                 setStatus({ type: 'success', ...data })
                 toast("Account Created Successfully.", {
@@ -93,9 +98,12 @@ const RegisterForm = () => {
                     duration: Infinity,
                 })
                 setEmail(values.email)
-                router.push('/verify')
-
-            } else {
+                setRedirect('/registration-successful')
+                router.push('/verify')  
+            } 
+            
+            // unsuccessful 
+            else {
                 setStatus({ type: 'error', ...data });
             }
         } catch (error) {
@@ -127,7 +135,7 @@ const RegisterForm = () => {
 
 
                     {/* Submit Button */}
-                    <Button type="submit" className="cursor-pointer w-full text-xs md:text-base font-bold leading-6  md:py-6">
+                    <Button disabled={isLoading} type="submit" className="cursor-pointer w-full text-xs md:text-base font-bold leading-6  md:py-6">
                         {
                             isLoading
                                 ? <Spinner stroke="10" color="white" size="10" />
@@ -135,6 +143,7 @@ const RegisterForm = () => {
                         }
                     </Button>
 
+                    {/* status message  */}
                     <Message status={status} />
                 </form>
             </Form>
