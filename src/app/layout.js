@@ -1,6 +1,6 @@
 import { Public_Sans } from "next/font/google";
 import "./globals.css";
-import { Toaster } from "@/components/ui/sonner"
+import { Toaster } from "@/components/UI/sonner"
 
 
 const publicSans = Public_Sans({
