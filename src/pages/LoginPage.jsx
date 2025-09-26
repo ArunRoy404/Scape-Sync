@@ -1,25 +1,25 @@
 import GoogleLogIn from '@/components/Authentication/GoogleLogIn';
-import RegisterForm from '@/components/Form/RegisterForm';
+import LoginForm from '@/components/Form/LoginForm';
 import Link from 'next/link';
 import React from 'react';
 
-const RegisterPage = () => {
+const LoginPage = () => {
     return (
         <section className='mx-auto max-w-[480px] h-screen flex items-center justify-center  px-4'>
             <div>
                 {/* heading  */}
                 <div className='space-y-2 text-center mb-10 md:mb-16 px-4'>
                     <h1 className='text-[rgba(33,43,54,1)] font-bold text-2xl' >
-                        Create your Account
+                        Welcome to ScapeSync
                     </h1>
                     <p className='text-[rgba(99,115,129,1)] text-base font-normal'>
-                        When sports Meets smart Tech.
+                        Please share your login details so you can access the website.
                     </p>
                 </div>
 
 
                 {/* form  */}
-                <RegisterForm />
+                <LoginForm/>
 
 
                 {/* divider  */}
@@ -37,13 +37,13 @@ const RegisterPage = () => {
                 {/* redirect  */}
                 <div className='mx-auto max-w-[480px] mt-4 md:mt-8 px-4 flex items-center justify-center gap-1'>
                     <p className='text-[rgba(33,43,54,1)] text-sm font-medium'>
-                        Already have an account?
+                        Don’t have an account?
                     </p>
                     <Link
-                        href={'/login'}
+                        href={'/register'}
                         className='text-primary font-semibold text-sm'
                     >
-                        Login
+                        Get Started
                     </Link>
                 </div>
             </div>
@@ -51,4 +51,4 @@ const RegisterPage = () => {
     );
 };
 
-export default RegisterPage;
+export default LoginPage;
