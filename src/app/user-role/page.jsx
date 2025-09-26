@@ -1,4 +1,4 @@
-import SelectRolePage from '@/pages/SelectRolePage';
+import UserRolePage from '@/pages/UserRolePage';
 
-const page = () => <SelectRolePage />
+const page = () => <UserRolePage />
 export default page;
